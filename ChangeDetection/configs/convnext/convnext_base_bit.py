@@ -6,7 +6,7 @@ _base_ = [
 # model settings
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 bit_norm_cfg = dict(type='LN', requires_grad=True)
-pretrained = '/share/home/dongzhe/Dongzhe/Foundation_Model/Downstream_Tasks/semantic_segmentation/pretrained/epoch8_convnext_base.pth'  # noqa'
+pretrained = '/share/home/dongzhe/Dongzhe/Foundation_Model/Downstream_Tasks/semantic_segmentation/pretrained/epoch400_convnext_base.pth'  # noqa'
 model = dict(
     type='SiamEncoderDecoder',
     pretrained=pretrained,

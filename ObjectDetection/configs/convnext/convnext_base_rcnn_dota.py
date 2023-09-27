@@ -1,7 +1,7 @@
 custom_imports = dict(imports=['mmrotate.core.optimizer.layer_decay_optimizer_constructor'], allow_failed_imports=False)
 angle_version = 'le90'
 num_classes = 15
-pretrained = '/share/home/dongzhe/Dongzhe/Foundation_Model/Downstream_Tasks/semantic_segmentation/pretrained/epoch8_convnext_base.pth'  # noqa
+pretrained = '/share/home/dongzhe/Dongzhe/Foundation_Model/Downstream_Tasks/semantic_segmentation/pretrained/epoch400_convnext_base.pth'  # noqa
 model = dict(
     type='OrientedRCNN',
     backbone=dict(
