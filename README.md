@@ -73,3 +73,37 @@ Environment:
 - mmsegmentation 0.30.0
 - opencd 0.0.3
 
+### Pre-training
+`torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_addr=localhost --master_port=1234 main.py data_path=${DataPath} --exp_name=${ExpName} --exp_dir=${ExpDir} --model=${Model} --bs=1024 --init_weight=${InitWeight}`
+
+### Finetune on Object Detection
+Train:  
+
+`bash tools/dist_train.sh ${ConfigPath} 8`  
+
+Test:  
+
+`bash tools/dist_test.sh ${ConfigPath} ${CheckpointPath} 8 --format-only --eval-options submission_dir=${SubmissionDir}`
+
+### Finetune on Semantic Segmentation
+
+Train:  
+
+`bash tools/dist_train.sh ${ConfigPath} 8`  
+
+Test:  
+
+`bash tools/dist_test.sh ${ConfigPath} ${CheckpointPath} 8 --eval 'mFscore' 'mIoU'`
+
+### Finetune on Change Detection
+
+Train:  
+
+`bash tools/dist_train.sh ${ConfigPath} 8`  
+
+Test:  
+
+`bash tools/dist_test.sh ${ConfigPath} ${CheckpointPath} 8 --eval mFscore mIoU`
+
+
+
