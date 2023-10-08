@@ -63,7 +63,7 @@ This is the official repository for the paper "Generative ConvNet Foundation Mod
 
 ## Usage
 
-Environment:
+### Environment
 
 - python 3.8.13
 - pytorch 1.12.1+cu113
