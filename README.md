@@ -9,3 +9,9 @@ This is the official repository for the paper "Generative ConvNet Foundation Mod
 
 ![flowchart](https://github.com/HIT-SIRS/SLFFM/assets/114158053/614d3211-da3e-44cf-9ed4-43f6b6e694b9)
 
+## pre-trained and fine-tuned models
+
+| Pretrain | Backbone      | Input Size | Paramters | Pretrained Model |
+|----------|---------------|---------|-----------|------------------|
+| SLFFM    | ConvNeXt-Base | 224x224 | 89M       | [Weights](<https://www.bilibili.com/>)|
+|  SLFFM   | ConvNeXt-Large| 224x224 | 198M      | [Weights](<https://www.bilibili.com/>)|
