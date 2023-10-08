@@ -9,9 +9,54 @@ This is the official repository for the paper "Generative ConvNet Foundation Mod
 
 ![flowchart](https://github.com/HIT-SIRS/SLFFM/assets/114158053/614d3211-da3e-44cf-9ed4-43f6b6e694b9)
 
-## pre-trained and fine-tuned models
+## Pre-trained and Fine-tuned Models
+
+### Pre-training
+
+#### GeoSense
 
 | Pretrain | Backbone      | Input Size | Paramters | Pretrained Model |
 |----------|---------------|---------|-----------|------------------|
 | SLFFM    | ConvNeXt-Base | 224x224 | 89M       | [Weights](<https://www.bilibili.com/>)|
 |  SLFFM   | ConvNeXt-Large| 224x224 | 198M      | [Weights](<https://www.bilibili.com/>)|
+
+### Object Detection
+
+#### Dota V1.0
+
+| Method         | Pre-train | Backbone       | Lr Schd | mAP   | Config                                                                                                                | Model                                   |
+|----------------|-----------|----------------|---------|-------|-----------------------------------------------------------------------------------------------------------------------|-----------------------------------------|
+| Oriented R-CNN | SLFFM     | ConvNeXt-Base  | 1x      | 79.15 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/ObjectDetection/configs/convnext/convnext_base_rcnn_dota.py>)   | [Weights](<https://www.bilibili.com/>)  |
+| Oriented R-CNN | SLFFM     | ConvNeXt-Large | 1x      | 79.33 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/ObjectDetection/configs/convnext/convnext_large_rcnn_dota.py>)  | [Weights](<https://www.bilibili.com/>)  |
+
+#### DIOR-R
+
+| Method         | Pre-train | Backbone       | Lr Schd | mAP   | Config                                                                                                                  | Model                                                                                                                 |
+|----------------|-----------|----------------|---------|-------|-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| Oriented R-CNN | SLFFM     | ConvNeXt-Base  | 1x      | 71.50 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/ObjectDetection/configs/convnext/convnext_base_rcnn_dior.py>)     | [Weights](<https://www.bilibili.com/>)                                                                                |
+| Oriented R-CNN | SLFFM     | ConvNeXt-Large | 1x      | 72.33 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/ObjectDetection/configs/convnext/convnext_large_rcnn_dior.py>)    | [Weights](<https://github.com/HIT-SIRS/SLFFM/blob/main/ObjectDetection/configs/convnext/convnext_large_rcnn_dior.py>) |
+
+### Semantic Segmentation
+
+#### Potsdam
+
+| Method   | Pre-train | Backbone       | Lr Schd | OA    | Config                                                                                                        | Model                                   |
+|----------|-----------|----------------|---------|-------|---------------------------------------------------------------------------------------------------------------|-----------------------------------------|
+| UperNet  | SLFFM     | ConvNeXt-Base  | 160k    | 91.72 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/SemanticSegmentation/configs/convnext_b_potsdam.py>)    | [Weights](<https://www.bilibili.com/>)  |
+| UperNet  | SLFFM     | ConvNeXt-Large | 160k    | 91.82 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/SemanticSegmentation/configs/convnext_l_potsdam.py>)    | [Weights](<https://www.bilibili.com/>)  |
+
+#### LoveDA
+
+| Method   | Pre-train | Backbone       | Lr Schd | mIoU  | Config                                                                                                    | Model                                   |
+|----------|-----------|----------------|---------|-------|-----------------------------------------------------------------------------------------------------------|-----------------------------------------|
+| UperNet  | SLFFM     | ConvNeXt-Base  | 160k    | 52.59 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/SemanticSegmentation/configs/convnext_b_loveda.py>) | [Weights](<https://www.bilibili.com/>)  |
+| UperNet  | SLFFM     | ConvNeXt-Large | 160k    | 53.03 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/SemanticSegmentation/configs/convnext_l_loveda.py>) | [Weights](<https://www.bilibili.com/>)  |
+
+### Change Detection
+
+#### LEVIR-CD
+
+| Method | Pre-train | Backbone       | Lr Schd | F1    | Config                                                                                                         | Model                                   |
+|--------|-----------|----------------|---------|-------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------|
+| BIT    | SLFFM     | ConvNeXt-Base  | 20k     | 93.66 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/ChangeDetection/configs/convnext/convnext_base_bit.py>)  | [Weights](<https://www.bilibili.com/>)  |
+| BIT    | SLFFM     | ConvNeXt-Large | 20k     | 93.89 | [Config](<https://github.com/HIT-SIRS/SLFFM/blob/main/ChangeDetection/configs/convnext/convnext_large_bit.py>) | [Weights](<https://www.bilibili.com/>)  |
